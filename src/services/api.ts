@@ -1,15 +1,10 @@
 import axios from 'axios';
 
-const FINMIND_API_BASE_URL = 'https://api.finmindtrade.com/api/v4/data';
+const API_BASE_URL = '/api/finmind';
 
 export const finmindApi = axios.create({
-  baseURL: FINMIND_API_BASE_URL,
+  baseURL: API_BASE_URL,
   timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization:
-      'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wOC0wNyAxODoyNDowMSIsInVzZXJfaWQiOiJmbHllciIsImlwIjoiMjEyLjg3LjE5NC42MyJ9.meFJWXc88-R3fDfVz5-015Lzkzll1P0gW1OsHYG3bGY',
-  },
 });
 
 export interface StockInfo {

@@ -49,7 +49,7 @@ export default function RevenueTable({stock}: RevenueTableProps) {
                     </Typography>
                   </TableCell>
                   {MonthRevenueData?.map(item => (
-                    <TableCell key={item.revenue_year} align="center" sx={{border: '1px solid #ddd', py: 2}}>
+                    <TableCell key={item.date} align="center" sx={{border: '1px solid #ddd', py: 2}}>
                       <Typography variant="subtitle2" fontWeight="bold">
                         {item.revenue_year}/{item.revenue_month.toString().padStart(2, '0')}
                       </Typography>
@@ -65,11 +65,7 @@ export default function RevenueTable({stock}: RevenueTableProps) {
                     </Typography>
                   </TableCell>
                   {MonthRevenueData?.map(item => (
-                    <TableCell
-                      key={`revenue-${item.revenue_year}`}
-                      align="center"
-                      sx={{border: '1px solid #ddd', py: 2}}
-                    >
+                    <TableCell key={`revenue-${item.date}`} align="center" sx={{border: '1px solid #ddd', py: 2}}>
                       <Typography variant="body2">
                         {Highcharts.numberFormat(item.revenue / 1000, 0, ',', ',')}
                       </Typography>
@@ -84,11 +80,7 @@ export default function RevenueTable({stock}: RevenueTableProps) {
                     </Typography>
                   </TableCell>
                   {MonthRevenueData?.map(item => (
-                    <TableCell
-                      key={`growth-${item.revenue_year}`}
-                      align="center"
-                      sx={{border: '1px solid #ddd', py: 2}}
-                    >
+                    <TableCell key={`growth-${item.date}`} align="center" sx={{border: '1px solid #ddd', py: 2}}>
                       <Typography variant="body2">{Highcharts.numberFormat(item.growth_rate, 2)}</Typography>
                     </TableCell>
                   ))}
